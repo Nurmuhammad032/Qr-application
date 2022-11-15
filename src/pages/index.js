@@ -1,0 +1,11 @@
+export { default as Home } from "./Home";
+export { default as SignUp } from "./SignUp";
+export { default as Login } from "./Login";
+export { default as AccountPage } from "./AccountPage";
+export { default as CreateNewQrCode } from "./CreateNewQrCode";
+export { default as WebQrCodes } from "./AccountFolders/WebQrCodes";
+export { default as ImageQrCodes } from "./AccountFolders/ImageQrCodes";
+export { default as PdfQrCodes } from "./AccountFolders/PdfQrCodes";
+export { default as TextQrCodes } from "./AccountFolders/TextQrCodes";
+export { default as EmailQrCodes } from "./AccountFolders/EmailQrCodes";
+export { default as MusicQrCodes } from "./AccountFolders/MusicQrCodes";
