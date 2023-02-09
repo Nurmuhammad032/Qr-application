@@ -5,6 +5,7 @@ import Context from "../Context/Context";
 import hexRgb from "hex-rgb";
 import axios from "axios";
 import ColorInput from "./ColorInput";
+import Loading from "./Loading";
 
 const frames = [
   {
@@ -38,6 +39,7 @@ const SelectDesignQrCode = () => {
   const [colorCenter, setColorCenter] = useState("#ebb2b2");
   const [qrImg, setQrImg] = useState(frames[0].img);
   const [qrFrameId, setQrFrameId] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { webData, dispatch, textData, emailData } = useContext(Context);
 
@@ -61,13 +63,17 @@ const SelectDesignQrCode = () => {
 
   // Function is created to post data to api
   const postData = (url, data, type) => {
-    axios.post(`https://abde.pythonanywhere.com/${url}/`, data).then(() => {
-      dispatch({ type: "OPEN_DESIGN", payload: false });
-      dispatch({ type: `${type}`, payload: "" });
-    });
+    axios
+      .post(`http://45.90.216.74/${url}/`, data)
+      .then(() => {
+        dispatch({ type: "OPEN_DESIGN", payload: false });
+        dispatch({ type: `${type}`, payload: "" });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   let handleClick = () => {
+    setIsLoading(true);
     let edgeColors = hexRgb(`${colorValue}`);
     let centerColors = hexRgb(`${colorCenter}`);
 
@@ -80,6 +86,7 @@ const SelectDesignQrCode = () => {
       r2: centerColors.red,
       g2: centerColors.blue,
       b2: centerColors.blue,
+      user_profile: 1,
     };
 
     // Which input is filled by user in account/create page, that data can be post
@@ -97,6 +104,7 @@ const SelectDesignQrCode = () => {
 
   return (
     <>
+      {isLoading && <Loading />}
       <div className="w-screen h-screen bg-[#d3dce0] z-10 opacity-[0.6] fixed top-0 left-0 right-0"></div>
       <div className="w-[50rem] bg-white z-20 py-10 px-5 absolute top-[50%] shadow-lg left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-md flex space-x-5">
         <div className="1/3">

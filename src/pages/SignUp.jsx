@@ -79,7 +79,7 @@ const SignUp = () => {
     };
 
     axios
-      .post("http://172.20.16.188:2000/profile/", data)
+      .post("http://45.90.216.74/user/sign_up/", data)
       .then(() => userRegister())
       .catch(() => dispatch({ type: "IS_LOADING", payload: false }));
   };

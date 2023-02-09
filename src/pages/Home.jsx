@@ -25,6 +25,7 @@ const Home = () => {
     r2: 0,
     g2: 0,
     b2: 0,
+    user_profile: 1,
   };
 
   // Post data function
@@ -32,7 +33,7 @@ const Home = () => {
     if (check) {
       setIsLoading(true);
       axios
-        .post(`http://172.20.16.188:2000/${url}/`, data)
+        .post(`http://45.90.216.74/${url}/`, data)
         .then((res) => {
           setQrCodeImg(`${res.data.Data.image}`);
           setIsLoading(false);
@@ -46,6 +47,10 @@ const Home = () => {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    axios.get("http://45.90.216.74/qrtext/").then((res) => console.log(res));
+  }, []);
 
   //
   useEffect(() => {

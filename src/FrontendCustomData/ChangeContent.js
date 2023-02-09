@@ -21,6 +21,7 @@ import {
 export const tabTypes = [
   {
     id: 1,
+    work: true,
     icon: <Language sx={{ fontSize: "2rem", color: "#616568" }} />,
     title: "website",
     text: "Link to any page on the web",
@@ -29,6 +30,7 @@ export const tabTypes = [
   },
   {
     id: 2,
+    work: false,
     icon: <RecentActors sx={{ fontSize: "2rem", color: "#616568" }} />,
     title: "vcard",
     text: "Share contact details",
@@ -37,6 +39,7 @@ export const tabTypes = [
   },
   {
     id: 3,
+    work: true,
     icon: <TextSnippet sx={{ fontSize: "2rem", color: "#616568" }} />,
     title: "text",
     text: "Display a short message",
@@ -45,6 +48,7 @@ export const tabTypes = [
   },
   {
     id: 4,
+    work: true,
     icon: <Email sx={{ fontSize: "2rem", color: "#616568" }} />,
     title: "email",
     text: "Get email messages",
@@ -53,6 +57,7 @@ export const tabTypes = [
   },
   {
     id: 5,
+    work: false,
     icon: <PictureAsPdf sx={{ fontSize: "2rem", color: "#616568" }} />,
     title: "PDF",
     text: "Link to a mobile-optimized PDF",
@@ -61,6 +66,7 @@ export const tabTypes = [
   },
   {
     id: 6,
+    work: false,
     icon: <LibraryMusic sx={{ fontSize: "2rem", color: "#616568" }} />,
     title: "MP3",
     text: "Play an audio file",
@@ -69,6 +75,7 @@ export const tabTypes = [
   },
   {
     id: 7,
+    work: false,
     icon: <Collections sx={{ fontSize: "2rem", color: "#616568" }} />,
     title: "Images",
     text: "Show a series of photos",

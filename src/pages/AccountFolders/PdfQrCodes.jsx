@@ -11,11 +11,11 @@ import axios from "axios";
 const PdfQrCodes = () => {
   const [displayData, setDisplayData] = useState(null);
 
-  useEffect(() => {
-    axios
-      .get("http://172.20.16.188:2000/qrpdf/")
-      .then((res) => setDisplayData(res.data));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://172.20.16.188:2000/qrpdf/")
+  //     .then((res) => setDisplayData(res.data));
+  // }, []);
 
   return (
     <div>

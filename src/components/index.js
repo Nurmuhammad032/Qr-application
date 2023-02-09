@@ -25,3 +25,4 @@ export { default as DisplayDataList } from "./DisplayDataList";
 export { default as SelectDesignQrCode } from "./SelectDesignQrCode";
 export { default as LoadingComponent } from "./LoadingComponent";
 export { default as ColorInput } from "./ColorInput";
+export { default as Loading } from "./Loading";

@@ -49,14 +49,16 @@ const CreateNewQrCode = () => {
                         }}
                         key={tab.id}
                         className={`bg-white lg:w-[48%] flex space-x-3 items-center px-3 py-2 lg:mb-3 mb-6 cursor-pointer group relative ${
-                          tab.id === holdId
+                          tab.id === holdId && tab.work
                             ? "border-[#90c52d] border-2"
-                            : "border-gray-300 border-[1px] hover:border-[#a4a6a8]"
+                            : tab.id !== holdId
+                            ? "border-gray-300 border-[1px] hover:border-[#a4a6a8]"
+                            : "border-red-600 border-2"
                         }`}
                       >
                         <div
                           className={`bg-[#90c52d] flex items-center justify-center rounded-full w-6 h-6 absolute -right-2 -bottom-2 ${
-                            tab.id === holdId ? "flex" : "hidden"
+                            tab.id === holdId && tab.work ? "flex" : "hidden"
                           }`}
                         >
                           <Check sx={{ color: "#fff", fontSize: "1.1rem" }} />
@@ -64,6 +66,15 @@ const CreateNewQrCode = () => {
                         <div className="group-hover:scale-110 transition-all">
                           {tab.icon}
                         </div>
+                        {!tab.work && (
+                          <div
+                            className={`absolute bottom-0 right-0 px-3 text-white bg-red-600 ${
+                              tab.id === holdId ? "block" : "hidden"
+                            }`}
+                          >
+                            Not working
+                          </div>
+                        )}
                         <div>
                           <h1 className="font-semibold text-[#616568] capitalize">
                             {tab.title}

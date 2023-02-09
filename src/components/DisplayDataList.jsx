@@ -15,13 +15,13 @@ const DisplayDataList = ({ icon, title, imgUrl, headerInfo }) => {
           <div>
             <img
               className="w-[10rem]"
-              src={`https://abde.pythonanywhere.com${imgUrl}`}
+              src={`http://45.90.216.74${imgUrl}`}
               alt="qrcode"
             />
           </div>
           <div>
             <a
-              href={`https://abde.pythonanywhere.com${imgUrl}`}
+              href={`http://45.90.216.74${imgUrl}`}
               className="py-2 px-14 text-sky-400 hover:bg-[#25acdd] hover:text-white border-2 border-gray-300 cursor-pointer transition-all"
               download
             >

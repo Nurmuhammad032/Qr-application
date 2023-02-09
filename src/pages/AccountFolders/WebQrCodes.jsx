@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext, useEffect, useState } from "react";
 import Context from "../../Context/Context";
 import { Language, List } from "@mui/icons-material";
@@ -17,12 +18,13 @@ const WebQrCodes = () => {
   useEffect(() => {
     setIsLoading(true);
     fetchData(
-      "https://abde.pythonanywhere.com/qrurl",
+      "http://45.90.216.74/qrurl/",
       setDisplayData,
       setWebLength,
       setIsLoading
     );
   }, [webData]);
+  console.log(displayData);
 
   return (
     <div>
