@@ -1,9 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, SignUp, Login, AccountPage, CreateNewQrCode } from "./pages";
 import { ContextProvider } from "./Context/Context";
-import axios from "axios";
-
-axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 
 function App() {
   return (

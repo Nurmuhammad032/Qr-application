@@ -18,7 +18,7 @@ const WebQrCodes = () => {
   useEffect(() => {
     setIsLoading(true);
     fetchData(
-      "http://45.90.216.74/qrurl/",
+      "https://jasuradmin.pythonanywhere.com/qrurl/",
       setDisplayData,
       setWebLength,
       setIsLoading

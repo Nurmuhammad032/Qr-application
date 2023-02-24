@@ -17,7 +17,7 @@ const EmailQrCodes = () => {
   useEffect(() => {
     setIsLoading(true);
     fetchData(
-      "http://45.90.216.74/qremail/",
+      "https://jasuradmin.pythonanywhere.com/qremail/",
       setDisplayData,
       setEmailLength,
       setIsLoading

@@ -79,7 +79,7 @@ const SignUp = () => {
     };
 
     axios
-      .post("http://45.90.216.74/user/sign_up/", data)
+      .post("https://jasuradmin.pythonanywhere.com/user/sign_up/", data)
       .then(() => userRegister())
       .catch(() => dispatch({ type: "IS_LOADING", payload: false }));
   };

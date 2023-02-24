@@ -17,7 +17,7 @@ const TextQrCodes = () => {
   useEffect(() => {
     setIsLoading(true);
     fetchData(
-      "http://45.90.216.74/qrtext/",
+      "https://jasuradmin.pythonanywhere.com/qrtext/",
       setDisplayData,
       setTextLength,
       setIsLoading

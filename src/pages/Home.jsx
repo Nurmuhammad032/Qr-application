@@ -33,7 +33,7 @@ const Home = () => {
     if (check) {
       setIsLoading(true);
       axios
-        .post(`http://45.90.216.74/${url}/`, data)
+        .post(`https://jasuradmin.pythonanywhere.com/${url}/`, data)
         .then((res) => {
           setQrCodeImg(`${res.data.Data.image}`);
           setIsLoading(false);
@@ -49,11 +49,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-    axios.get("http://45.90.216.74/qrtext/").then((res) => console.log(res));
-  }, []);
-
-  //
-  useEffect(() => {
     // If current tab equal to 1 (web) then setData works, else if (text)
     if (currentTab === 1) {
       data.url = urlValue;
@@ -67,6 +62,11 @@ const Home = () => {
   useEffect(() => {
     // Every change current tab, web validation must be false
     dispatch({ type: "WEB_INVALID", payload: false });
+  }, [currentTab]);
+
+  useEffect(() => {
+    dispatch({ type: "URL_VALUE", payload: null });
+    console.log("hauy ");
   }, [currentTab]);
 
   useEffect(() => {

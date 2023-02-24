@@ -65,7 +65,7 @@ const Login = () => {
     };
 
     axios
-      .post("http://45.90.216.74/user/login/", data)
+      .post("https://jasuradmin.pythonanywhere.com/user/login/", data)
       .then(() => userRegister())
       .catch(() => {
         dispatch({ type: "IS_LOADING", payload: false });

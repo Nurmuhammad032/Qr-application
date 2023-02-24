@@ -64,7 +64,7 @@ const SelectDesignQrCode = () => {
   // Function is created to post data to api
   const postData = (url, data, type) => {
     axios
-      .post(`http://45.90.216.74/${url}/`, data)
+      .post(`https://jasuradmin.pythonanywhere.com/${url}/`, data)
       .then(() => {
         dispatch({ type: "OPEN_DESIGN", payload: false });
         dispatch({ type: `${type}`, payload: "" });
